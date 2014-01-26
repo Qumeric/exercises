@@ -1,0 +1,9 @@
+swap rot
+swap dup rot swap
+: -rot   swap rot swap  ;
+: four   dup 1 + swap / ;
+: five   dup 7 * 5 + *  ;
+: six    over * swap dup
+         9 * * swap -   ;
+
+

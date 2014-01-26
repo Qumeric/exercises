@@ -1,0 +1,6 @@
+* +         (c b a -- result)
+4 * - 6 / + (c a b -- result)
+* 8 /       (a b   -- result)
+* 200 /     (a b   -- result)
+2 * 3 + *   (a a   -- result)
+Impossible

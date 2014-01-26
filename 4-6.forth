@@ -1,0 +1,10 @@
+: within ( n l h)
+   rot  ( l h n)
+   dup  ( l h n n)
+   -rot ( l n h n )
+   >    ( l n h>n)
+   rot  ( n h>n l)
+   1 -  ( n h>n l-1)
+   rot  ( h>n l-1 n)
+   <    ( h>n l-1<n)
+   and . ;
