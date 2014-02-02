@@ -1,9 +1,9 @@
 : gift ." chocolade" ;
-: giver ." Vika <3" ;
+: giver ." Sandy" ;
 : thanks ." Dear " giver ." ," cr 8 spaces ." thanks for the " gift ." !" cr ;
 
 thanks
 
-: giver ." Dasha <3" ;
+: giver ." Isabel" ;
 
 thanks

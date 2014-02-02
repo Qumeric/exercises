@@ -1,37 +1,35 @@
 Fundamental Forth
 =================
 
-Words
+Stack notation
+--------------
+It's kinda comments of Forth
+Syntax:     <word> ( <before> -- <after> )
+Example:    spaces ( n -- )
+
+n means number, c mean character, d means double, f means boolean.
+
+Glossary
 -----
-<x> emit                    type a symbol with charcode x
-<x> spaces                  type x spaces
-space                       1 spaces
-: <name>   <command> ;      assign command to name
-CR                          '\n'
-<number> do <command> loop  ?
-[char] <char>               return keycode
-." <string>"                print string, last mark called "delimiter"
-<stack> .[S]                [!]remove number from stack and print it
++ `emit   (n -- )`                    type a symbol with charcode x
++ `spaces (n -- )`                    type x spaces
++ `space  ( --  )`                    1 spaces
++ `: <word>   <commands> ;`           define word with commands
++ `CR     ( --  )`                    '\n'
++ `do <commands> loop ( to from -- )` loop with counter 
++ `[char] <char>`                     return keycode
++ `." <string>"`                      print string, last mark called "delimiter"
++ `<stack> .[S]`                      [!]remove number from stack and print it
 
 
 Internals
 ---------
 INTERPRET finds words and pass them to EXECUTE if the word was found in dictionary or to NUMBER in other case.
-: writes down word into dictionary and stops when ; occur.
 
 Other
 -----
 Words can contain all symbols expect space, backspace and return.
 Words shouldn't be longer than 30 symbols.
-Glossary - list of words.
-
-### Stack notation
-It's kinda comments of Forth
-Syntax:     <command> ( <before> -- <after> )
-Example:    24 emit   (n -- )
-
-Rightmost item located on the top of the stack.
-n means number, c mean character, d means double, f means boolean.
 
 
 How To Get Results
@@ -39,22 +37,22 @@ How To Get Results
 
 Integer Arithmetic
 ------------------
-+ - * / > = < (a b -- result)
-[/]mod  (a b -- rem [quot])
+`+ - * / > = < ( a b -- result )`
+`[/]mod  ( a b -- rem [quot] )`
 
 Stack manipulations
 -------------------
-[2]swap (a b -- b a)
-[2]dup  (n -- n n)
-[2]over (a b -- a b a)
-rot     (a b c -- b c a)
-[2]drop (n --)
+`[2]swap ( a b -- b a )`
+`[2]dup  ( n -- n n )`
+`[2]over ( a b -- a b a )`
+`rot     ( a b c -- b c a )`
+`[2]drop ( n -- )`
 "2" versions work with pairs of numbers.
 
 The Editor (And Staff)
 ======================
 
-Words
+Glossary
 -----
 forget <word>       remove _last_ meaning of the word.
 marker <-word>      return to the system state on the marker's line.
