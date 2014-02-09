@@ -1,4 +1,4 @@
-It is my attempt to solve exercise from various programming books
+It is my attempt to solve exercises from various programming books
 
 Currently there are only two books:
 * The C Programming Language
