@@ -7,7 +7,7 @@ Currently there are only two books:
 Both of them are not finished yet.
 
 TODO:
-* tcpl 1-24
-* tcpl 3-4
-* tcpl 4-(8-11, 13 (this one is kinda hard))
-* "refactoring" everywhere
+* check 2 and 3 chapter
+* exercise 3-4
+* complete 4 and 5 chapter
+* FORTH!!!
