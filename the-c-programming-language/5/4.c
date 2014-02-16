@@ -1,5 +1,6 @@
 #include <string.h>
 
+// I hope it works
 _Bool strend(char *s, char *t)
 {
     int len_s = strlen(s);

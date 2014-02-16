@@ -11,10 +11,10 @@ int main(void)
     return 0;
 }
 
-/* getint: get next integer from input into *pn */
+// I dunno how it should work
 int getint(int *pn)
 {
-    int c, sign;
+    int c, sign, notdigit;
    
     while (isspace(c = getchar()))
         ;
@@ -24,8 +24,14 @@ int getint(int *pn)
     }
     
     sign = (c == '-') ? -1 : 1;
-    if (c == '+' || c == '-')
+    if (notdigit=(c == '-' || c == '+'))
         c = getchar();
+    if (!isdigit(c)) {
+        ungetc(c, stdin);
+        if (notdigit)
+            ungetc((sign == -1) ? '-' : '+', stdin);
+        return 0;
+    }
     for (*pn = 0; isdigit(c); c = getchar())
         *pn = 10 * *pn + (c - '0');
     *pn *= sign;
