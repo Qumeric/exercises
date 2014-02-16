@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "getline.c"
 #define MAXLINE 1000
-#define TRUE    1
 
 int nextTabstop(int ts, int n) {
     if (ts == 1)
@@ -20,7 +19,7 @@ void entab(char line[], int n)
 
     while(line[i] != EOF && line[i] != '\n') {
         if (line[i] == ' ' || line[i] == '\t') {
-            while(TRUE) {
+            while(1) {
                 if (line[i] == ' ') {
                     spaces++;
                     if (spaces >= tabstop) {
@@ -50,10 +49,9 @@ void entab(char line[], int n)
     eline[j] = '\0';
 
     printf("%s", eline);
-
-    return;
 }
 
+// This exercise probably needs rewriting
 int main(void)
 {
     char line[MAXLINE];

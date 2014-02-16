@@ -9,8 +9,9 @@ int getline(char s[], int lim)
         i++;
     }
     s[i] = '\0';
-    
-    if (i == lim-1)
+
+    // Exercise 1-16 fix
+    if (i == lim-1) 
         for (; (c=getchar())!=EOF && c!='\n'; i++)
             ;
     return i;

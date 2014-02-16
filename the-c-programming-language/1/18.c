@@ -2,13 +2,14 @@
 #include "getline.c"
 #define MAXLINE 1000
 
+// Maybe this exercise need rewriting
 int main(void)
 {
     int len;
     int i, j;
     char line[MAXLINE];
     char blanks[MAXLINE];
-    int inword;
+    short inword;
 
     while ((len = getline(line, MAXLINE)) > 0) {
         i = j = 0;
@@ -16,13 +17,13 @@ int main(void)
         blanks[0] = '\0';
 
         for(; line[i] == ' ' || line[i] == '\t'; i++)
-            ;   // skip blanks at beginning of the line
+            ;   // skip blanks at the beginning of the line
         
         if (line[i] == '\n')
             line[i] = '\0';  // remove empty lines
 
         for(; line[i] != '\0'; i++) {
-            /* add all blanks to the special array */
+            /* add all blanks to the blanks array */
             if (line[i] == ' ' || line[i] == '\t') {
                 blanks[j++] = line[i];
                 blanks[j] = '\0';

@@ -2,6 +2,17 @@
 #include "getline.c"
 #define MAXLINE 1000
 
+void detab(char line[], int n);
+
+int main(void)
+{
+    char line[MAXLINE];
+    while (getline(line, MAXLINE) > 0) {
+        detab(line, 8);
+    }
+    return 0;
+}
+
 void detab(char line[], int n)
 {
     int i, j;
@@ -21,14 +32,4 @@ void detab(char line[], int n)
     dline[j] = '\0';
 
     printf("%s", dline);
-    return;
-}
-
-int main(void)
-{
-    char line[MAXLINE];
-    while (getline(line, MAXLINE) > 0) {
-        detab(line, 8);
-    }
-    return 0;
 }

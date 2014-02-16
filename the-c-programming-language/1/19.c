@@ -17,10 +17,8 @@ void reverse(char s[]) {
     int len = 0;
     char temp;
 
-    while (s[len] != '\n') {
-        len++;
-    }
-
+    while (s[len++] != '\n')
+        ;
     len -= 1;
 
     for (int i=0; i <= len/2; i++) {
@@ -28,5 +26,4 @@ void reverse(char s[]) {
         s[i] = s[len-i];
         s[len-i] = temp;
     }
-    return;
 }

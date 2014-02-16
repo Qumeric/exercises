@@ -1,30 +1,33 @@
 #define MAXLENGTH 16 
 #include <stdio.h>
 
+/* Words can contain all characters except blanks.
+ * 473 is a word and (.)(.) is a word too. */
+
 int main(void)
 {
     int c;
-    int length = 0;
+    short length = 0;
     int lengths[MAXLENGTH];
-    
+
     for (int i = 0; i < MAXLENGTH; i++)
         lengths[i] = 0;
 
     while ((c=getchar()) != EOF) {
         if (c == ' ' || c == '\t' || c == '\n') {
-            lengths[0]++;
-            lengths[length]++;
-            length = 0;
+            if (length) {
+                lengths[length-1]++;
+                length = 0;
+            }
         } else {
             length++;
         }
     }
 
     for (int i = 0; i < MAXLENGTH; i++) {
-        printf("%d", i);
+        printf("%d", i+1);
         for (int j = 0; j < lengths[i]; j++)
             putchar('*');
         putchar('\n');
     }
 }
-

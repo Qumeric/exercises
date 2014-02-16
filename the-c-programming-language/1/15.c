@@ -11,11 +11,9 @@ int main(void)
     upper = 300;
     step = 20;
     
-    printf("Fahrenheit\tCelsius\n");
-
     fahr = lower;
     while (fahr <= upper) {
-        printf("%10.0f\t%7.1f\n", fahr, fahr2celsius(fahr));
+        printf("%3.0f\t%3.1f\n", fahr, fahr2celsius(fahr));
         fahr = fahr + step;
     }
 }

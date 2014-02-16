@@ -11,7 +11,6 @@ void fold(char line[], int max, int tabstop) {
             putchar('\n');
             position = 0;
         }
-
         if (line[i] == '\t' || line[i] == ' ') {
             for (int j=position+1; ; j++) {
                 if (line[j] == '\t' || line[j] == ' ' || line[j] == '\n') {
@@ -24,7 +23,6 @@ void fold(char line[], int max, int tabstop) {
                 }
             }
         }
-
         putchar(line[i]);
         
         if (line[i] == '\t')
@@ -32,8 +30,6 @@ void fold(char line[], int max, int tabstop) {
         else
             position++;
     }
-
-    return;
 }
 
 int main(void)
