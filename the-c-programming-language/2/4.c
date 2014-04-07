@@ -6,7 +6,7 @@ bool in(char c, char s[]);
 
 int main(void)
 {   
-    char line[1000] = "abcdefgh"; 
+    char line[1000] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"; 
     squeeze(line, "ae");
     printf("%s\n", line);
 }

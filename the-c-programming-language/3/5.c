@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "../1/getline.c"
 #define MAXLINE 1000
 
 void itob(int n, char s[], unsigned char b);
@@ -10,7 +9,7 @@ int main(void)
 {
     char line[MAXLINE];
 
-    itob(127127, line, 16);
+    itob(127127, line, 16); // 1f097
     printf("itob: %s\n", line);
     
     return 0;
@@ -19,7 +18,7 @@ int main(void)
 void itob(int n, char s[], unsigned char b)
 {
     int sign, i;
-    char symbols[37] = "0123456789abcdefghijklmnopqrstuvwxyz";   // 26 + 10
+    char symbols[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
     if ((sign = n) < 0)
         n = -n;

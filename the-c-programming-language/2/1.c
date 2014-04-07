@@ -10,5 +10,4 @@ int main(void) {
     printf("Unsigned int    from %u to %u  \n", 0,        UINT_MAX );
     printf("Signed long     from %ld to %ld\n", LONG_MIN, LONG_MAX );
     printf("Unsigned long   from %lu to %lu\n", 0,        ULONG_MAX);
-
 }

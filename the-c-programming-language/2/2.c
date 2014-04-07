@@ -1,10 +1,18 @@
-for (i = 0; ; i++) {
-    if (i < lim -1)
-        break;
-    else if ((c=getchar()) != '\n')
-        break;
-    else if (c != EOF)
-        break;
-    else
-        s[i] = c;
+#include <stdio.h>
+
+int main(void) {
+    int i = 0, lim = 100, c;
+
+    char s[lim];
+
+    while (i < lim -1) {
+        c=getchar();
+
+        if (c == '\n')
+            break;
+        else if (c == EOF)
+            break;
+            
+        s[i++] = c;
+    }
 }

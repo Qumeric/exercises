@@ -6,7 +6,7 @@ void expand(char s1[], char s2[]);
 
 int main(void)
 {
-    char toExpand[MAXLINE] = "a-z0-9";
+    char toExpand[MAXLINE];
     char expanded[MAXLINE];
 
     while(getline(toExpand, MAXLINE) > 0) {
@@ -17,7 +17,10 @@ int main(void)
     return 0;
 }
 
-/* UNDONE */
+/* Simple version (FIXME)
+ * prints all ASCII characters from sequences like a-bC-D0-1e-f2-3G-H
+ * also may work with something like H-k0-t and even with -!?, tho shouldn't
+ */
 void expand(char s1[], char s2[])
 {
     int c = 0;
@@ -26,4 +29,5 @@ void expand(char s1[], char s2[])
         for (int j = s1[i]; j <= s1[i+2]; j++)
             s2[c++] = j;
     }
+    s2[c] = '\0'
 }

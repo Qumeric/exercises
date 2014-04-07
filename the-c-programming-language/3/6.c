@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "../1/getline.c"
 #define MAXLINE 1000
 
 void itoa(int n, char s[], unsigned short m);
@@ -11,7 +10,7 @@ int main(void)
     char line[MAXLINE];
 
     itoa(127127, line, 10);
-    printf("itoa: %s\n", line);
+    printf("itoa:\n%s\n", line);
     
     return 0;
 }

@@ -1,8 +1,9 @@
 /* 
  * All this functions threat bits like this:
- * 000010001100
- * Length of the sequence is 8 (stars from highest non-zero bit). 
- * 11 is two bits starting from fourth bit.
+ * 000010011100
+ * Length of the sequence is 8 (begins from highest non-zero bit). 
+ * First 1 is zeroth bit.
+ * 111 is three bits starting from third bit.
  */ 
 
 #include <stdio.h>
@@ -37,6 +38,7 @@ unsigned char getBitLength(unsigned n)
     }
 }
 
+// 2.6
 unsigned setbits(unsigned x, unsigned p, unsigned n, unsigned y)
 {
     unsigned char len = getBitLength(x);
@@ -46,6 +48,7 @@ unsigned setbits(unsigned x, unsigned p, unsigned n, unsigned y)
 
 }
 
+// 2.7
 unsigned invert(unsigned x, unsigned p, unsigned n)
 {
     unsigned y = getbits(x, p, n);
@@ -53,6 +56,7 @@ unsigned invert(unsigned x, unsigned p, unsigned n)
     return x;
 }
 
+// 2.8
 unsigned rightrot(unsigned x, unsigned n)
 {
     unsigned char len = getBitLength(x);
