@@ -1,16 +1,29 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 #include "../1/getline.c"
 #define MAXLINE 100
 
-/* atof: convert string s to double */
+double atof(char[]);
+
+int main(void)
+{
+    double atof(char []);
+    char line[MAXLINE];
+    int getline(char line[], int max);
+
+    while (getline(line, MAXLINE) > 0)
+        printf("\t%g\n", atof(line));
+    return 0;
+}
+
 double atof(char s[])
 {
     double val, power;
     int i, sign, esign, exp;
 
-    for (i = 0; isspace(s[i]); i++) /* skip white space */
-        ;
+    for (i = 0; isspace(s[i]); i++)
+        ; // skip white space
     sign = (s[i] == '-') ? -1 : 1;
     if (s[i] == '+' || s[i] == '-')
         i++;
@@ -24,7 +37,7 @@ double atof(char s[])
     }
     exp = 0;
 
-    if (s[i++] == 'e') {
+    if (tolower(s[i++]) == 'e') {
         esign = (s[i] == '-') ? -1 : 1;
         if (s[i] == '+' || s[i] == '-')
             i++;
@@ -40,16 +53,4 @@ double atof(char s[])
     }
     
     return sign * val / power;
-}
-
-/* rudimentary calculator */
-int main(void)
-{
-    double atof(char []);
-    char line[MAXLINE];
-    int getline(char line[], int max);
-
-    while (getline(line, MAXLINE) > 0)
-        printf("\t%g\n", atof(line));
-    return 0;
 }
