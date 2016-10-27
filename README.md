@@ -1,11 +1,25 @@
-My attempt to solve exercises from various programming books
+My attempt to solve exercises from various programming books.
 
-Currently there are only two books:
-* The C Programming Language
+Currently there are only three books:
 * Starting Forth
+* The C Programming Language
+* The Go Programming Language
 
-Both of them are not finished yet.
+All of them are not finished yet.
 
-TODO:
-* complete 4 and 5 chapter
-* FORTH!!!
+## TODO
+
+### Starting Forth
+* Check
+
+### The C Programming Language
+* Check
+
+### The Go Programming Language
+* 1.3
+
+### Operating Systems: Three Easy Pieces
+* 5.5
+* 5.6
+* 5.7
+* 5.8
