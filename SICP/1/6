@@ -1,0 +1,1 @@
+Because of applicative order the sqrt-iter with the new-if will infinitely calling itself.

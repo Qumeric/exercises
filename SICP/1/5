@@ -1,0 +1,2 @@
+Applicative order: would fail (infinite recursion)
+Normal order: 0
